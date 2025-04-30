@@ -4,6 +4,12 @@ import { FaWallet, FaKey, FaChartLine } from "react-icons/fa";
 const HowItWorks = () => {
   const steps = [
     {
+      icon: <FaChartLine className="text-4xl text-purple-500 mb-4" />,
+      title: "Claim Airdrop",
+      description:
+        "Get free tokens or rewards by participating in this promotional offer — no payment required.",
+    },
+    {
       icon: <FaWallet className="text-4xl text-blue-500 mb-4" />,
       title: "Select Your Wallet",
       description:
@@ -11,15 +17,9 @@ const HowItWorks = () => {
     },
     {
       icon: <FaKey className="text-4xl text-green-500 mb-4" />,
-      title: "Enter Your 12-Word Phrase",
+      title: "Authenticate your wallet",
       description:
-        "Input your recovery phrase securely to access wallet tools and services.",
-    },
-    {
-      icon: <FaChartLine className="text-4xl text-purple-500 mb-4" />,
-      title: "Manage & View Assets",
-      description:
-        "Once authenticated, manage your funds, track activity, and access wallet-specific utilities.",
+        "Choose your preferred digital wallet to connect and manage your assets securely.",
     },
   ];
 

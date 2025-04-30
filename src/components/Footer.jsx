@@ -10,19 +10,19 @@ const Footer = () => (
         alt="hoobank"
         className="w-[266px] h-[72.14px] object-contain"
       />
-      <p className={`${styles.paragraph} mt-4 md:w-1/2 w-full text-center`}>
+      {/* <p className={`${styles.paragraph} mt-4 md:w-1/2 w-full text-center`}>
         All inputs are processed securely and handled according to the highest
         standards of data protection. Always keep your phrase private and
         secure.
-      </p>
+      </p> */}
     </div>
 
-    <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
-      <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
-        Copyright Ⓒ 2025 HooCrypt. All Rights Reserved.
+    <div className="w-full flex justify-center items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
+      <p className="font-poppins font-normal text-center text-[14px] md:text-[18px] md:leading-[27px] text-white">
+        Copyright Ⓒ 2025 Krypt Help Desk. All Rights Reserved.
       </p>
 
-      <div className="flex flex-row md:mt-0 mt-6">
+      {/* <div className="flex flex-row md:mt-0 mt-6">
         {socialMedia.map((social, index) => (
           <img
             key={social.id}
@@ -34,7 +34,7 @@ const Footer = () => (
             onClick={() => window.open(social.link)}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   </section>
 );

