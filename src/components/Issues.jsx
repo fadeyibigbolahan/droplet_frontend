@@ -21,13 +21,13 @@ const Issues = () => {
             <div
               key={i.id}
               onClick={() => handleIssueClick()}
-              className="flex flex-row items-center bg-black p-2 justify-start md:gap-4 gap-1 rounded-xl shadow-md cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
+              className="flex flex-row items-center bg-[#101920] p-2 justify-start md:gap-4 gap-1 rounded-xl shadow-md cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
             >
-              <div className="flex justify-center items-center p-2 rounded-lg mb-1">
+              <div className="flex justify-center items-center p-3 border-r border-gray-300 mb-1">
                 {Icon && <Icon className="text-4xl text-white" />}
               </div>
-              <div className="flex flex-col justify-start items-start gap-2">
-                <span className="text-[20px] text-center font-bold text-white">
+              <div className="flex flex-col justify-start items-start gap-2 p-2">
+                <span className="text-[20px] font-bold text-white">
                   {i.title}
                 </span>
                 <p className="text-white">{i.content}</p>

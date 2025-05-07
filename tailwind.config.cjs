@@ -4,6 +4,9 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      backgroundImage: {
+        "hero-pattern": "url('./src/assets/topbanner17.jpg')",
+      },
       colors: {
         primary: "#00040f",
         secondary: "#00f6ff",

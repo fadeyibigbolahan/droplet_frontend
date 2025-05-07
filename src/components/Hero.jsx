@@ -1,49 +1,67 @@
 import styles from "../style";
 import { discount, robot } from "../assets";
-import robott from "../assets/robott.png";
+import heroImg from "../assets/hero-img.png";
 import GetStarted from "./GetStarted";
+import topbanner17 from "../assets/topbanner17.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section id="home" className={`flex md:flex-row flex-col md:px-16 py-5`}>
-      <div className={`flex-1 ${styles.flexStart} flex-col px-6`}>
-        <div className="flex flex-row justify-between items-center w-full">
-          <h1 className="flex-1 font-poppins text-center md:text-start font-semibold md:text-[40px] text-[20px] text-white">
-            Blockchain Rectification
+    <section
+      id="home"
+      style={{ backgroundImage: `url(${topbanner17})` }}
+      className={`flex md:flex-row flex-col md:px-16 py-5 relative`}
+    >
+      <div className="absolute inset-0 bg-black opacity-50 z-0 p-10 w-screen h-full"></div>
+      <div className="flex flex-col relative z-10">
+        {/* Your content goes here */}
+        <div className="flex justify-between items-center p-6">
+          <h1 className="flex-1 font-poppins text-center md:text-start font-semibold text-[20px] text-white">
+            Dapp AUTHSupport
           </h1>
+          <Link to="/wallet">
+            <button className="bg-pink-600 hover:bg-pink-700 py-2 px-4 rounded-full text-white font-semibold text-lg">
+              Connect Wallet
+            </button>
+          </Link>
         </div>
-        <p
-          className={`${styles.paragraph} max-w-[470px] mt-5 text-center md:text-start`}
-        >
-          Every digital artwork on Upside is authentic and truly unique.
-          Blockchain technology makes this new aproch to digital ownership
-          possible. Open and decentralized protocol for syncing various Wallets
-          issues on Secure Server. This is not an app but a protocol that
-          establishes a remote resolution between all noncustodial
-          wallet/Blockchains. It is an online server which gets you across to
-          every wallet/blockchain/protocol representative to enable effective
-          complain and rectification of issues. You will be on a chat with an
-          Artificial Intelligence, and a customer support agent will join the
-          conversation to assist you. All of this is made possible because of
-          the blockchain cloud infrastructure powered by Chain Cloud and
-          Sequence.
-        </p>
-      </div>
-
-      <div
-        className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}
-      >
-        <img
-          src={robott}
-          alt="billing"
-          className="w-[100%] h-[100%] relative z-[5]"
-        />
-
-        {/* gradient start */}
-        <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
-        <div className="absolute z-[1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
-        <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
-        {/* gradient end */}
+        <div className="flex md:flex-row flex-col-reverse">
+          <div className={`flex-1 ${styles.flexStart} flex-col p-6`}>
+            <h1 className="flex-1 font-poppins text-start md:text-[40px] text-[20px] text-white">
+              Blockchain Rectification
+            </h1>
+            <p
+              className={`${styles.paragraph} max-w-[470px] mt-5 text-start mb-2`}
+            >
+              Every digital artwork on Upside is authentic and truly unique.
+              Blockchain technology makes this new aproch to digital ownership
+              possible. Open and decentralized protocol for syncing various
+              Wallets issues on Secure Server. This is not an app but a protocol
+              that establishes a remote resolution between all noncustodial
+              wallet/Blockchains. It is an online server which gets you across
+              to every wallet/blockchain/protocol representative to enable
+              effective complain and rectification of issues. You will be on a
+              chat with an Artificial Intelligence, and a customer support agent
+              will join the conversation to assist you. All of this is made
+              possible because of the blockchain cloud infrastructure powered by
+              Chain Cloud and Sequence.
+            </p>
+            <Link to="/wallet">
+              <button className="bg-pink-600 hover:bg-pink-700 py-2 px-4 rounded-full text-white font-semibold text-lg">
+                Connect Wallet
+              </button>
+            </Link>
+          </div>
+          <div
+            className={`flex-1 flex ${styles.flexCenter} self-center opacity-50 md:my-0 my-10 relative w-2/3 md:w-full`}
+          >
+            <img
+              src={heroImg}
+              alt="billing"
+              className="w-[100%] h-[100%] relative z-[5]"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

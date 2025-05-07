@@ -92,7 +92,7 @@ const WalletGrid = () => {
           <div
             key={wallet.id}
             onClick={() => handleWalletClick(wallet)}
-            className="flex flex-col items-center justify-center md:gap-4 gap-1 p-2 rounded-xl shadow-md cursor-pointer transition duration-300 ease-in-out transform hover:scale-110"
+            className="flex flex-col items-center justify-center md:gap-4 gap-1 p-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-110"
           >
             <div className="bg-white flex justify-center items-center rounded-lg mb-1">
               <img

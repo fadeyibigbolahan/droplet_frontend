@@ -6,12 +6,20 @@ const WalletPage = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-3">
       <Navbar />
-      <div className="flex flex-col justify-center items-center gap-1 mb-2">
-        <h2 className="font-bold text-3xl">Wallets</h2>
-        <p className="font-semibold text-lg">Choose a wallet</p>
+      <div className="flex flex-col justify-center items-center gap-6 my-4">
+        <h2 className="font-bold text-3xl text-[#587087]">Wallets</h2>
+        <p className="font-semibold text-lg text-[#587087]">
+          Connect your preffered wallet.
+        </p>
       </div>
       <WalletGrid />
-      <Footer />
+      <div className="flex justify-center items-center py-10">
+        <p className="text-sm text-gray-400">
+          Open a pull request on{" "}
+          <strong className="text-blue-400 cursor-pointer">Github</strong> to
+          add your wallet here.
+        </p>
+      </div>
     </div>
   );
 };

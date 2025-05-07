@@ -6,25 +6,20 @@ import Issues from "../components/Issues";
 
 const HomePage = () => (
   <div className="bg-primary w-full overflow-hidden">
-    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Navbar />
-      </div>
-    </div>
     <div className={`${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Hero />
       </div>
     </div>
-    <div>
+    <div className="bg-[#15212A]">
       <div className={`py-8 ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
-          <h1 className="text-white text-4xl font-bold text-center mt-10 mb-5">
+          <h1 className="text-white text-4xl md:text-6xl font-bold text-center mt-10 mb-5">
             Select the issue you are experiencing below
           </h1>
         </div>
       </div>
-      <div className={`bg-primary ${styles.flexStart}`}>
+      <div className={`${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <p className="text-white text-lg text-center mb-10">
             You can also connect your wallet by selecting any of the option
