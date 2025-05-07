@@ -3,7 +3,9 @@ import logo from "../assets/logo.png";
 import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => (
-  <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+  <section
+    className={`${styles.flexCenter} ${styles.paddingY} flex-col bg-black w-full`}
+  >
     <div className={`flex justify-center items-center flex-col mb-8 w-full`}>
       <img
         src={logo}

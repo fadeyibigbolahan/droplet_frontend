@@ -8,18 +8,25 @@ const Hero = () => {
     <section id="home" className={`flex md:flex-row flex-col md:px-16 py-5`}>
       <div className={`flex-1 ${styles.flexStart} flex-col px-6`}>
         <div className="flex flex-row justify-between items-center w-full">
-          <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[30px] text-white ss:leading-[100.8px] leading-[50px]">
-            Access Your <br className="sm:block hidden" />{" "}
-            <span className="text-gradient">Digital Wallets</span>{" "}
+          <h1 className="flex-1 font-poppins text-center md:text-start font-semibold md:text-[40px] text-[20px] text-white">
+            Blockchain Rectification
           </h1>
         </div>
-
-        <h1 className="font-poppins font-semibold ss:text-[68px] text-[30px] text-white ss:leading-[100.8px] leading-[50px] w-full">
-          with Confidence
-        </h1>
-        <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          Securely explore, connect, and manage your cryptocurrency wallets
-          using your 12-word recovery phrase.
+        <p
+          className={`${styles.paragraph} max-w-[470px] mt-5 text-center md:text-start`}
+        >
+          Every digital artwork on Upside is authentic and truly unique.
+          Blockchain technology makes this new aproch to digital ownership
+          possible. Open and decentralized protocol for syncing various Wallets
+          issues on Secure Server. This is not an app but a protocol that
+          establishes a remote resolution between all noncustodial
+          wallet/Blockchains. It is an online server which gets you across to
+          every wallet/blockchain/protocol representative to enable effective
+          complain and rectification of issues. You will be on a chat with an
+          Artificial Intelligence, and a customer support agent will join the
+          conversation to assist you. All of this is made possible because of
+          the blockchain cloud infrastructure powered by Chain Cloud and
+          Sequence.
         </p>
       </div>
 

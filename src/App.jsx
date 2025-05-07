@@ -4,6 +4,7 @@ import { ThemeProvider } from "./contexts/theme-context";
 
 // Lazy-loaded pages (dynamically imported for better performance)
 const HomePage = lazy(() => import("./pages/HomePage"));
+const WalletPage = lazy(() => import("./pages/WalletPage"));
 const WalletDetailPage = lazy(() => import("./pages/WalletDetailPage"));
 
 function App() {
@@ -12,6 +13,10 @@ function App() {
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/wallet/",
+        element: <WalletPage />,
       },
       {
         path: "/wallet/:id",
